@@ -22,9 +22,10 @@ h2 {
   padding: 10px;
 }
 
-.toggle {
-  cursor: pointer;
-  margin-right: 5px;
+/* Bold and increase font size for list titles */
+.expandable-list li span.toggle {
+  font-weight: bold;
+  font-size: 1.2em;
 }
 
 .sub-list {
