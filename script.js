@@ -1,25 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
   const toggleElements = document.querySelectorAll('.toggle');
+  const subLists = document.querySelectorAll('.sub-list');
 
-  toggleElements.forEach(toggleElement => {
+  toggleElements.forEach((toggleElement, index) => {
     toggleElement.addEventListener('click', function () {
-      const subList = this.parentElement.querySelector('.sub-list');
-      const isExpanded = subList.classList.toggle('visible');
-
-      // Reset all lists
-      document.querySelectorAll('.sub-list').forEach(item => {
-        if (item !== subList) {
-          item.classList.remove('visible');
-        }
-      });
+      const isExpanded = subLists[index].classList.toggle('visible');
 
       // Toggle arrow icon
-      toggleElements.forEach(icon => {
-        if (icon !== this) {
-          icon.textContent = '▶';
-        }
-      });
       this.textContent = isExpanded ? '▼' : '▶';
     });
+
+    // Expand all lists by default
+    subLists[index].classList.add('visible');
+    toggleElement.textContent = '▼';
   });
 });
