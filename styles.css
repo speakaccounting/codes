@@ -1,0 +1,35 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+}
+
+.expandable-list {
+  list-style: none;
+  padding: 0;
+}
+
+.expandable-list li {
+  margin-bottom: 10px;
+}
+
+.toggle {
+  cursor: pointer;
+}
+
+.sub-list {
+  list-style: none;
+  padding-left: 20px;
+  display: none;
+}
+
+.sub-list.visible {
+  display: block;
+}
+
+/* Add your additional styles as needed */
