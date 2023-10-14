@@ -8,10 +8,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Adjust container height
       const container = subList.closest('.expandable-list');
-      container.style.height = isExpanded ? subList.scrollHeight + 'px' : null;
+      const containerHeight = isExpanded ? subList.scrollHeight + 'px' : 'auto';
+      container.style.height = containerHeight;
 
       // Toggle arrow icon
       this.textContent = isExpanded ? '▼' : '▶';
+
+      // Reset other expanded lists
+      document.querySelectorAll('.sub-list.visible').forEach(item => {
+        if (item !== subList) {
+          item.classList.remove('visible');
+          item.closest('.expandable-list').style.height = 'auto';
+        }
+      });
     });
   });
 });
