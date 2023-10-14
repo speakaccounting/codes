@@ -1,35 +1,45 @@
+/* styles.css */
+
 body {
   font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
   margin: 0;
-  padding: 0;
 }
 
 h2 {
-  text-align: center;
-  color: #333;
+  color: #007bff;
 }
 
 .expandable-list {
   list-style: none;
   padding: 0;
+  overflow: hidden; /* Hide overflow to prevent scrollbar */
 }
 
 .expandable-list li {
-  margin-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
 }
 
 .toggle {
   cursor: pointer;
+  margin-right: 5px;
 }
 
 .sub-list {
   list-style: none;
-  padding-left: 20px;
-  display: none;
+  padding: 0;
+  margin: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease; /* Smooth transition effect */
 }
 
-.sub-list.visible {
-  display: block;
+.sub-list li {
+  padding: 10px;
 }
 
-/* Add your additional styles as needed */
+.visible {
+  max-height: 500px; /* Adjust to a reasonable maximum height */
+}
